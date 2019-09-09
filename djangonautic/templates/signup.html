@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>SIGN UP </title>
+
+
+<body background="pic2.jpg">
+
+<script>
+function checkPassword(form) { 
+                password1 = form.password1.value; 
+                password2 = form.password2.value;
+                if (password1 == '') 
+                    alert ("Please enter Password"); 
+                else if (password2 == '') 
+                    alert ("Please enter confirm password"); 
+                else if (password1 != password2) { 
+                    alert ("\nPassword did not match: Please try again...") 
+                    return false; 
+                }
+                else{ 
+                    return true;
+                	   } 
+            }
+</script>
+</head>
+<body>
+<form onSubmit="return checkPassword(this)">
+
+
+
+	
+<center><h1>SIGN-UP PAGE</h1>
+
+</center><b><i>		
+<article>User Name:</artice><br>
+<input type="text" placeholder="Create Username" required/><br />
+<br />
+	
+	
+<article>Email:</artice><br>
+<input type="email" placeholder="Email Address" required/><br />
+<br />
+	
+	
+<article>Password:</artice><br>	
+<input type="password" name="password1" placeholder="Password" required/><br />
+<br />
+
+
+		
+<article>Confirm Password:</artice><br>		
+<input type="password" name="password2" placeholder="Confirm Password" required/><br />
+<br />
+
+  
+      
+<article>Phone no:</artice>
+<br> 
+<input type="number" placeholder="Phone no" required/><br />
+<br />
+</b></i>
+
+		
+<a href="home.html">
+<input type="submit" value="Submit"></a><br >
+<br >
+		
+<div>
+		<b>			</form>
+<input type="radio" id="agree"name="accept" value="agree"checked> By creating an acount you agree to the <strong>terms of service</strong>
+</div>
+<br />
+		
+<input type=checkbox>Subscribe to the M-FINE newsletter </input><br />
+<br />
+<br />
+
+<br />
+		
+<article align=center>
+By subscribing to the M-FINE newsletter you will receive 1000 bonus points.  Invite friends and receive 1000 bonus points for each friend (max 5000 pts).
+</article>
+<br />
+<br />
+<br />
+<br />
+		
+</b>		
+	
+</body>
+</html>
