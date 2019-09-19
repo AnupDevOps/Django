@@ -1,26 +1,17 @@
-{% load static from staticfiles %}
+{% extends "base_layout.html" %}
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Articles</title>
-        <!--<link rel="stylesheet" href="/static/style.css"> --->
-        <!-- above methood is not wrong because its hard coded, everytime we update the setting.py static folder we need to udpate this so we use python way  --> 
-        <link rel="stylesheet" href="{% static 'style.css' %}">
-    </head>
-    <body>
-        <h1>Articles List</h1>
-        <p>Welcome to django Homepage</p>
-        <div class="articles">
-            {% for article in articles  %}
-                <div class="article">
-                    <h2><a href="#">{{ article.title }}</a></h2>
-                    <p>{{ article.snippet }}</p>
-                    <p> {{ article.date }}</p>
-                </div>
+{% block content %}
 
-            {% endfor %}
-        </div>
-    </body>
-</html>
+<h1>Articles List</h1>
+<p>Welcome to django Homepage</p>
+<div class="articles">
+    {% for article in articles  %}
+    <div class="article">
+        <h2><a href="{% url 'articles:detail' slug=article.slug %}">{{ article.title }}</a></h2>
+        <p>{{ article.snippet }}</p>
+        <p> {{ article.date }}</p>
+    </div>
+
+    {% endfor %}
+</div>
+{% endblock %}
